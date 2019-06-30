@@ -23,7 +23,7 @@ public class DropDownAssignment {
 		
 		selectMonthUtility(elemBirthMonth, 7);
 		
-		//countryListFunction(elemCountryCode);
+		countryListFunction(elemCountryCode);
 		
 		countryListFunctionSelect(elemCountryCode, "India ‪(+91)‪");
 		}
