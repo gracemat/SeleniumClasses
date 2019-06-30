@@ -30,15 +30,22 @@ public class NoSelectHtmlTagProg {
 		//pastebutton.click();
 		
 		String xpathValue ="//ul[@class='context-menu-list context-menu-root']/li[contains(@class,'context-menu-item context-menu-icon')]";
-		utilityOfRightClick(xpathValue,"Quit");
+		//Assertion
+		if(utilityOfRightClick(xpathValue,"Copy"))
+			{
+			System.out.println("Test Passed by Choosing our Option");
+			}
+		else {
+			System.out.println("Test Failed bcos of Invalid option");
+		}
 		}
 	/**
 	 * This Utility Method selects Right Click option when there is no Select html tag
 	 * @param xpathCode
 	 */
-	
-		public static void utilityOfRightClick(String xpathVal,String xpathCode)
-		{						
+		public static boolean utilityOfRightClick(String xpathVal,String xpathCode)
+		{		
+			boolean flag = false;
 			List<WebElement> rightClickPaste = driver.findElements(By.xpath(xpathVal));
 			for(int i=0;i<rightClickPaste.size();i++) {
 				String displayedValues=rightClickPaste.get(i).getText();
@@ -46,10 +53,11 @@ public class NoSelectHtmlTagProg {
 				if(displayedValues.equals(xpathCode))
 				{
 					rightClickPaste.get(i).click();
+					flag = true;
 					break;
 				}
-			
-		}
+			}
+			return flag;
 	}
 
 }
