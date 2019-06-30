@@ -24,7 +24,7 @@ public class MenuSubMenu {
 		
 		Thread.sleep(3000);
 		
-	driver.findElement(By.linkText("అన్నదాత")).click();//its Telugu news paper or Annadaata(Farmers)
+	driver.findElement(By.linkText("అన్నదాత")).click();//its Telugu news paper section for Annadaata(Farmers)
 	}
 
 }
