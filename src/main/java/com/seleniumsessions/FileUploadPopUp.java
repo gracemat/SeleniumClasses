@@ -10,7 +10,7 @@ public class FileUploadPopUp {
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\ChromeDriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://cgi-lib.berkley.edu/ex/fup.html");
+		//driver.get("https://cgi-lib.berkley.edu/ex/fup.html");
 		
 		Thread.sleep(3000);
 		

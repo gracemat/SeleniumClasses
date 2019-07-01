@@ -9,7 +9,11 @@ public class AuthPopup {
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\ChromeDriver.exe");
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth");
+		//driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth");
+		String userId = "admin";
+		String pwd = "admin";
+		
+		driver.get("http://"+userId+":"+pwd+"@"+"the-internet.herokuapp.com/basic_auth");
 
 	}
 
