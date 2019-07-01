@@ -20,6 +20,8 @@ public class RightClickProg {
 		
 		WebElement rightClick = driver.findElement(By.xpath("//span[@class='context-menu-one btn btn-neutral']"));
 		
+		action.click(rightClick).build().perform();
+		
 		action.contextClick(rightClick).build().perform();
 		
 		WebElement pastebutn = driver.findElement(By.className("context-menu-icon-paste"));
