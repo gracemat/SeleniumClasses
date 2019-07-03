@@ -25,9 +25,19 @@ public static void main(String[] args) {
 	List<WebElement> datesList = driver.findElements(By.xpath("//tbody//tr//span"));
 	System.out.println("Total days in calendar:" +datesList.size());
 	
+	List<WebElement> disabledDates = driver.findElements(By.className("bpk-calendar-date--blocked"));
+	int disabledDatesCount = disabledDates.size();
 	
-	
-	
+	for ( int i=disabledDatesCount;i<datesList.size();i++)
+	{
+		String dateValue = datesList.get(i).getText();
+		System.out.println(dateValue);
+		if (dateValue.equals("1"))
+		{
+			datesList.get(i).click();
+			break;
+		}
+		}
 	
 }
 }
