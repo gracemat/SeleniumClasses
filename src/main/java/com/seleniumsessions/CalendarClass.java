@@ -1,7 +1,12 @@
 package com.seleniumsessions;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class CalendarClass {
 public static void main(String[] args) {
@@ -9,6 +14,19 @@ public static void main(String[] args) {
 	WebDriver driver = new ChromeDriver();
 	
 	driver.get("https://www.skyscanner.co.in");
+	
+	driver.findElement(By.id("depart-fsc-datepicker-button")).click();
+	
+	WebElement date = driver.findElement(By.id("depart-calendar__bpk_calendar_nav_select"));
+	Select sel = new Select(date);
+	sel.selectByVisibleText("July 2019");
+	
+	
+	List<WebElement> datesList = driver.findElements(By.xpath("//tbody//tr//span"));
+	System.out.println("Total days in calendar:" +datesList.size());
+	
+	
+	
 	
 	
 }
