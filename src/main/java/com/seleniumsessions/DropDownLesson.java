@@ -77,7 +77,10 @@ public class DropDownLesson {
 		sel.selectByIndex(index);
 
 	}
-	
+	/**
+	 * 
+	 * @param listElem
+	 */
 	public static void getTravelersList(WebElement listElem) 
 	{
 		System.out.println("Getting values from List method:");
