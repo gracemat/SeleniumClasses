@@ -11,6 +11,7 @@ public class OptionsAssignment {
 		co.addArguments("test-type");
 		co.addArguments("--ignore-certificate-errors");
 		co.addArguments("--disable-popup-blocking");
+		co.addArguments("--incognito");
 		//co.addArguments("--headless");
 		//Here we are trying to display this website without images to save some time
 		
