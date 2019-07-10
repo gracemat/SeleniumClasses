@@ -17,13 +17,20 @@ public class HashMapImplinSelenium {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://www.vitaminshoppe.com/s/myAccount/login.jsp");
-		
-	     driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys("Adam");;
-		 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys("@dam123");	
-	}
-	
-	public HashMap<String, String>getCredentialsMap() {
+	driver.get("https://www.vitaminshoppe.com/s/myAccount/login.jsp");
+	 System.out.println(getCredentialsMap().get("Admin"));
+	 String adminDetails = getCredentialsMap().get("Admin");
+	 driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys(adminDetails.split(":")[0]);
+	 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys(adminDetails.split(":")[1]);
+	 
+//	     driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys("Adam");
+//		 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys("@dam123");	
+		 }
+	/**
+	 * HashMApping
+	 * @return
+	 */
+	public static HashMap<String, String>getCredentialsMap() {
 		HashMap<String, String> roleBased = new HashMap<String, String>();
 		roleBased.put("Customer", "Adam:@dam123");
 		roleBased.put("Admin", "Andrew:@ndrew231");
