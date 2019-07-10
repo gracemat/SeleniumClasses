@@ -36,22 +36,22 @@ public class HashMapImplinSelenium {
 	 */
 	public static HashMap<String, String> getCredentialsMap() {
 		HashMap<String, String> roleBased = new HashMap<String, String>();
-		roleBased.put("Customer", "Adam:@dam123");
-		roleBased.put("Admin", "Andrew:@ndrew231");
-		roleBased.put("Supply", "Ajay:@jay321");
-		roleBased.put("Delivery", "Arjun:@rjun213");
+		roleBased.put("Customer", "Adam::@dam123");
+		roleBased.put("Admin", "Andrew::@ndrew231");
+		roleBased.put("Supply", "Ajay::@jay321");
+		roleBased.put("Delivery", "Arjun::@rjun213");
 		return roleBased;
 		
 	}
 	
 	public static  String getUserId(String role) {
 		String userName = getCredentialsMap().get(role);
-		return userName.split(":")[0];
+		return userName.split("::")[0];
 	}
 	
 	public static String getPasswd(String role) {
 		String credentials = getCredentialsMap().get(role);
-		return credentials.split(":")[1];
+		return credentials.split("::")[1];
 		
 	}
 	
