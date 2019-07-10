@@ -20,8 +20,12 @@ public class HashMapImplinSelenium {
 	driver.get("https://www.vitaminshoppe.com/s/myAccount/login.jsp");
 	 System.out.println(getCredentialsMap().get("Admin"));
 	 String adminDetails = getCredentialsMap().get("Admin");
-	 driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys(adminDetails.split(":")[0]);
-	 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys(adminDetails.split(":")[1]);
+//	 driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys(adminDetails.split(":")[0]);
+//	 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys(adminDetails.split(":")[1]);
+
+	 driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys(getUserId("Supply"));
+	 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys(getPasswd("Supply"));
+	 
 	 
 //	     driver.findElement(By.id("vs_registerLoginEmailAddress")).sendKeys("Adam");
 //		 driver.findElement(By.id("vs_registerLoginPassword")).sendKeys("@dam123");	
@@ -30,7 +34,7 @@ public class HashMapImplinSelenium {
 	 * HashMApping
 	 * @return
 	 */
-	public static HashMap<String, String>getCredentialsMap() {
+	public static HashMap<String, String> getCredentialsMap() {
 		HashMap<String, String> roleBased = new HashMap<String, String>();
 		roleBased.put("Customer", "Adam:@dam123");
 		roleBased.put("Admin", "Andrew:@ndrew231");
@@ -39,5 +43,18 @@ public class HashMapImplinSelenium {
 		return roleBased;
 		
 	}
+	
+	public static  String getUserId(String role) {
+		String userName = getCredentialsMap().get(role);
+		return userName.split(":")[0];
+	}
+	
+	public static String getPasswd(String role) {
+		String credentials = getCredentialsMap().get(role);
+		return credentials.split(":")[1];
+		
+	}
+	
+	
 
 }
