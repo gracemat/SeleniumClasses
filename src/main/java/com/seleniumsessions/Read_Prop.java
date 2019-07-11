@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -43,7 +44,12 @@ public class Read_Prop {
 		if(browseravail.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			if(pro.getProperty("headless").equals("yes")) {
+				ChromeOptions co = new ChromeOptions();
+				co.addArguments("--headless");
+				driver = new ChromeDriver(co);
+			}
+			//driver = new ChromeDriver();
 		}else if (browseravail.equalsIgnoreCase("Ff")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
