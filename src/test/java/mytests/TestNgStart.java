@@ -50,6 +50,11 @@ public class TestNgStart {
 	{
 		System.out.println("Second Test");
 	}
+	@Test
+	public void secondRoundTest()
+	{
+		System.out.println("Checking alphabet Priority");
+	}
 	
 	@AfterMethod
 	public void logout()
