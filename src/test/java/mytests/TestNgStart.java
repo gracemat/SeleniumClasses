@@ -19,7 +19,7 @@ public class TestNgStart {
 	//Post conditions
 	//logout
 	//browser closed
-	//S T C M----M C T S
+	//S T C M----M C T S is the sequence of execution
 	@BeforeSuite
 	public void openBrowser()
 	{
@@ -45,6 +45,11 @@ public class TestNgStart {
 	{
 		System.out.println("Testing11111");
 	}
+	@Test
+	public void secondTest()
+	{
+		System.out.println("Second Test");
+	}
 	
 	@AfterMethod
 	public void logout()
@@ -69,3 +74,31 @@ public void deleterUser()
 	System.out.println("User got deleted");
 }
 }
+//[RemoteTestNG] detected TestNG version 6.14.3
+//Opening Browser
+//Launching Url
+//Login to App
+//Log in Test
+//Testing11111
+//Logout
+//Log in Test
+//Second Test
+//Logout
+//User got deleted
+//Database Disconnecting
+//PASSED: loginTestFirst
+//PASSED: secondTest
+//
+//===============================================
+//    Default test
+//    Tests run: 2, Failures: 0, Skips: 0
+//===============================================
+//
+//Closing Browser
+//
+//===============================================
+//Default suite
+//Total tests run: 2, Failures: 0, Skips: 0
+//===============================================
+
+
