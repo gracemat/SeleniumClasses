@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<<!-- Right click on Project and on TestNG click on convert to TestNG -->
+<suite name="MyFirstTestSuite">
+  <test thread-count="5" name="First Test cases">
+    <classes>
+      <!--  class name="mytests.ExpectedExceptionTest"/> -->
+    <!--   <class name="mytests.DependsonMethod"/> -->
+      <class name="PageTest.LoginPageTest"/>
+      <!-- <class name="mytests.PriorityTests"/> -->
+      <class name="PageTest.BasePageTest"/>
+    <!--   <class name="mytests.TestNgStart"/>
+      <class name="mytests.RepeatedTests"/> -->
+      <class name="PageTest.LoginPageTestCase2"/>
+      <class name="PageTest.LoginPageCaseStudy3"/>
+    </classes>
+    
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
