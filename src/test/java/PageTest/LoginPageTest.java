@@ -9,7 +9,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+//CASE STUDY --- 1
+//Here we are Launching browser only once and executing Multiple Tests
 public class LoginPageTest {
 	WebDriver driver;
 	
@@ -21,7 +22,7 @@ public class LoginPageTest {
 		driver.get("https://access.trivago.com/oauth/en-US/login?step=register");
 	} 
 	
-	@Test
+	@Test(priority=1)
 	public void loginPageTitleTest()
 	{
 		String loginTitle = driver.getTitle();
@@ -36,7 +37,7 @@ public class LoginPageTest {
 //		}
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void registerButtonTest()
 	{
 		boolean regFlag = driver.findElement(By.id("register_email_submit")).isDisplayed();
