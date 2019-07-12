@@ -14,7 +14,7 @@ public class RepeatedTests {
 //	public void createUserUtilityTest()
 //	{
 //		for(int i=0;i<9;i++) {
-//			createUserUtilityMethod();
+//			createUserUtilityMethod();//u can call diff method without object bcos here it is non static method 
 //			}
 //		}
 //	
